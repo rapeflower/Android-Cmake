@@ -9,9 +9,13 @@ add_library(
         # 包含的cpp
         native_lib.cpp
 )
+find_library(
+        log-lib
+        log
+)
 # 链接到项目中
 target_link_libraries(
         native_lib
         android
-        log
+        ${log-lib}
 )

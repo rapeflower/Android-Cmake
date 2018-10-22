@@ -3,7 +3,8 @@
 //
 #include <jni.h>
 #include <string>
+#define COMMON_FUN(name)Java_com_lily_cmake_jni_##name
 
-extern "C" JNIEXPORT jstring JNICALL Java_com_lily_cmake_jni_NativeFun_stringFromJNI(JNIEnv *env, jclass cls) {
+extern "C" JNIEXPORT jstring JNICALL COMMON_FUN(NativeFun_stringFromJNI)(JNIEnv *env, jclass cls) {
      return env->NewStringUTF("Android CMake study C++");
 }
